@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+        <div class="container">
+  <section class=" " style="max-width: 100rem;">
+<div class="row">
+
+    <div class="col-md-8">
+             <h1 class="text-center m-4"> Detail Article</h1>
+ <div class="card">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img src="{{articles.image.url}}" class="img-fluid" style="width: 50rem; height:  25rem;"/>
+
+      </div>
+      <div class="card-body">
+        <h5 class="card-title font-weight-bold"><a>{{ articles.title}}</a></h5>
+
+
+        <p class="card-text">
+         {{articles.content}}
+        </p>
+
+
+
+        <a href="#!" class="btn btn-link link-secondary p-md-1 mb-0">Button</a>
+      </div>
+    </div>
+
+    </div>
+    <div class="col-md-4">
+
+        <h3 class="text-sm-end  m-4">Les articles en relations </h3>
+           {% for art in aer %}
+           {% if art.id != articles.id %}
+        <div class="card mb-3" style="max-width: 500px;">
+
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{art.image.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{art.title}}</h5>
+        <p class="card-text">{{art.content}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+        {%endif%}
+          {% endfor %}
+
+    </div>
+
+</div>
+
+
+  </section>
+</div>
+{% endblock %}
+

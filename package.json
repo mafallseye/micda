@@ -1,0 +1,5 @@
+cl{
+  "devDependencies": {
+    "tailwindcss": "^4.0.14"
+  }
+}
