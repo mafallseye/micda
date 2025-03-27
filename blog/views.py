@@ -16,3 +16,8 @@ def detail(request, id_article):
     article_en_relations = BlogPost.objects.filter(category=category)
     context = {"articles": articles, "aer": article_en_relations}
     return render(request ,'detail.html',context)
+
+def search(request):
+    query=request.GET["articles"]
+    list_article= BlogPost.objects.filter(title__unaccent__icontains=query)
+    return render(request , 'search.html',{"list_article":list_article})

@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+<h1> Liste des  recherches </h1>
+{%for article in list_article %}
+<li>{% article.title %}</li>
+{%endfor%}
+{% block content %}
+{%endblock%}

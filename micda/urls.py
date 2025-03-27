@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.conf.urls.static import  static
 from django.conf import settings
 from django.urls import path, include
-from blog.views import  index , detail
+from blog.views import  index , detail , search
 
 urlpatterns = [
 #path('', include('blog.urls')),
     path('', index , name="index"),
 path('article/<int:id_article>', detail , name="detail"),
+path('article/recherche', search , name="search"),
     path('admin/', admin.site.urls),
+    path('auth/', include('auth_app.urls'),name="auth"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
