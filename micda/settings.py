@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-dbid_s9y!ml)c@k&2^&1(s=yeqa*m8g^z31r%_swgv)6q=(4@i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'micda.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["C:/Users/Maguette Seye/OneDrive/Bureau/BlocDoc/micda/micda/templates"],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
